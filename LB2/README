@@ -1,0 +1,77 @@
+# Лабораторна робота №2
+
+## Призначення бібліотеки
+Ця бібліотека створена в межах лабораторної роботи для демонстрації повного циклу розробки TypeScript-проєкту: від базової ініціалізації та роботи з `package.json` до впровадження типізації, використання змінних оточення, валідації конфігурації та побудови стабільного публічного API.  
+Проєкт також демонструє роботу із залежностями, правила семантичного версіонування (SemVer), налаштування інструментів якості коду (ESLint, Prettier, Husky, Commitlint) та правильний підхід до еволюції версій.
+
+---
+
+## Інструкції з запуску
+
+## Встановлення залежностей
+```bash```
+npm i
+
+## Запуск демо-прикладів
+
+npm run demo
+
+## Збірка проєкту
+
+npm run build
+
+---
+## Еволюція версій (кроки розвитку)
+- 0.1.0 — додано базові функції з any (add, capitalize).
+
+- 0.2.0 — типізація: any замінено на number і string.
+
+- 0.3.0 — додано складний тип NumberFormatOptions та функцію formatNumber.
+
+- 0.4.0 — додано інтерфейс User та generic-функцію groupBy<T>.
+
+- 0.5.0 — додано клас Logger, валідацію .env через zod, config.ts.
+
+- 1.0.0 — стабілізація API, додано поле exports, заборонено any.
+
+- 2.0.0 — breaking change: функція add тепер приймає масив чисел (number[]).
+
+## Приклади використання функцій
+
+```add```
+add([1, 2, 3]); // 6
+
+```capitalize```   
+capitalize("hello world"); // "Hello world"
+
+```formatNumber```
+formatNumber(1234567.89, { style: "currency", currency: "USD" }); // "$1,234,567.89"
+
+```groupBy```
+groupBy<User>(users, user => user.age); // { "25": [...], "30": [...] }
+
+```Logger```
+const logger = new Logger('debug');
+logger.info('This is an info message.');
+logger.error('This is an error message.');
+
+---
+
+## Нотатка про .env
+
+Файл .env керує конфігурацією програми без зміни коду.
+Підтримуються такі ключі:
+APP_PRECISION — число від 0 до 10 (точність форматування)
+LOG_LEVEL — 'silent' | 'info' | 'debug'
+
+Всі значення проходять валідацію через zod, що запобігає некоректним налаштуванням.
+
+## Теги релізів
+- https://github.com/CookieYup/Construct-P3/releases/tag/0.0.0
+- https://github.com/CookieYup/Construct-P3/releases/tag/0.1.0
+- https://github.com/CookieYup/Construct-P3/releases/tag/0.2.0
+- https://github.com/CookieYup/Construct-P3/releases/tag/0.3.0
+- https://github.com/CookieYup/Construct-P3/releases/tag/0.4.0
+- https://github.com/CookieYup/Construct-P3/releases/tag/0.5.0
+- https://github.com/CookieYup/Construct-P3/releases/tag/1.0.0
+- https://github.com/CookieYup/Construct-P3/releases/tag/2.0.0
